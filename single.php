@@ -1,0 +1,26 @@
+<?php
+/**
+ * Single post template
+ */
+get_header(); ?>
+
+<main class="site-content">
+    <?php while (have_posts()) : the_post(); ?>
+        <article <?php post_class(); ?>>
+            <header class="entry-header">
+                <h1 class="entry-title"><?php the_title(); ?></h1>
+            </header>
+
+            <div class="entry-content">
+                <?php the_content(); ?>
+            </div>
+        </article>
+
+        <!-- 광고 -->
+        <div class="ad-container">
+            <?php echo get_native_ad(); ?>
+        </div>
+    <?php endwhile; ?>
+</main>
+
+<?php get_footer(); ?>
